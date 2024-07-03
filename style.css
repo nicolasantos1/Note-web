@@ -1,0 +1,80 @@
+*{  
+    text-align: center;
+   
+}
+body{
+    background-color: rgb(50, 54, 68);
+    color: white;
+}
+button{
+    background-color: rgb(34, 37, 48);
+    color: white;
+    background-attachment: blue;
+}
+
+.forma{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+    
+   
+}
+.forma_ativo{
+    border-bottom: 2px solid rgb(40, 38, 53);
+   
+    
+    
+   
+}
+.linha_grupo{
+    border-radius: 10px;
+    padding: 1vw;
+    gap: 1em 0;
+    display: grid;
+    grid: 25px / 130px 60px 60px 60px ; /*a linha apos a barra representa quantas colocunas vai ser, antes da barra é o tamanho da primeira*/
+    grid-auto-rows: 25px;
+    background-color: rgb(34, 37, 48);
+   
+    border: 2px solid  rgb(26, 29, 39);;
+    
+}
+.exercicio, .exercicio_editando, .input {
+    border: 2px solid rgb(64, 59, 87);
+    border-radius: 4px;
+    
+
+}
+
+.exercicio{
+    border: 0;
+    background-color: transparent;
+}
+/*.exercicio_editando{
+
+}*/
+.input:focus {
+    outline: 2.5px solid rgb(100, 100, 100);
+
+}
+.exercicio:focus{
+    outline: none;
+
+}
+#add {
+    margin-top: 50px;
+    width: 25px;
+    height: 25px;
+    
+    
+}
+.add_ex{
+    grid-column: span 4; /* Ocupa todas as colunas */
+    justify-self: center; /* Centraliza horizontalmente */
+    height: 30px;
+    width: 30%;
+    
+}
+#mais{
+    visibility: hidden;
+}
+
