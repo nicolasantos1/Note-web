@@ -127,9 +127,9 @@ function criar_caixas(numerodadivisao){
 
     espace_sections.appendChild(add)
 
-    add_ex.setAttribute("onclick","criar_linhas("+number+"); manter_mudado()")
+    add_ex.setAttribute("onclick","criar_firstLinha("+number+"); manter_mudado()")
     remove_ex.setAttribute("onclick","remove_linha("+number+","+ divNum +")")
-    criar_linhas(number)
+    criar_firstLinha(number)
 
     if(number == 0){
         maisa(a,[a])
@@ -139,7 +139,7 @@ function criar_caixas(numerodadivisao){
 
 }
 
-function criar_linhas(linhaNum){
+function criar_firstLinha(linhaNum){
     
     let quallinha   = document.getElementById("linha"+ linhaNum )
     

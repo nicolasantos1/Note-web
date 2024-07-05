@@ -4,34 +4,30 @@ let numero_forma = 0
 let qual_forma = []
 let numero_section = [0] //numero de caixas por forma
 
-
+var ses = document.getElementById('var').addEventListener('click', function(){
+    console.clear()
+    console.log('numero_caixa = ',numero_caixa);
+    console.log('numero_forma = ',numero_forma)
+    console.log('qual_forma = ',qual_forma)
+    console.log('numero_section = ',numero_section)
+})
 
 function criar_forma(){
-    
-    
-    let lugar_sessaotreino = document.getElementById("sessoes_treino")
-    
 
     let forma           = document.createElement("div")
         forma.id        = "forma"+numero_forma
         forma.className = "forma"
         
-
     let btn_sessaonum             = document.createElement("button")
+        btn_sessaonum.type ='checkbox'
         btn_sessaonum.textContent = numero_forma + 1
         btn_sessaonum.className   = "btn_sessao"
         btn_sessaonum.setAttribute("onclick",'ativado('+numero_forma+')')
-
+    let lugar_sessaotreino = document.getElementById("sessoes_treino")    
         lugar_sessaotreino.insertBefore(btn_sessaonum, add)
 
     let lugar_forma = document.getElementById("espaco_formas") 
         lugar_forma.appendChild(forma)
-
-
-    
-      
-
-    
 
     ativado(numero_forma)
     
@@ -44,10 +40,6 @@ function criar_forma(){
         }
     }
     
-    
-        
-    
-    
     numero_forma++
 }
 
@@ -58,9 +50,7 @@ function criar_caixas(numeroforma){
     }
    
     
-    console.log(numeroforma,numero_caixa[numeroforma])
-    //console.log(numero_section,numero_forma)
-    //console.log(numero_section[numero_forma]);
+    // console.log(numeroforma,numero_caixa[numeroforma])
     
     
 
@@ -80,14 +70,14 @@ function criar_caixas(numeroforma){
         forma.appendChild(btn_addcaixas)
         numero_section[numeroforma] =+ 1
         forma.insertBefore(caixas,btn_addcaixas)
-        criar_linhas(numeroforma,numero_caixa[numeroforma])
+        criar_firstLinha(numeroforma,numero_caixa[numeroforma])
         
         numero_caixa[numeroforma] = numero_caixa[numeroforma] + 1 
         
     }else{
         
         forma.insertBefore(caixas, btn_addcaixas)
-        criar_linhas(numeroforma,numero_caixa[numeroforma])
+        criar_firstLinha(numeroforma,numero_caixa[numeroforma])
         numero_caixa[numeroforma] = numero_caixa[numeroforma] + 1 
     }
     
@@ -95,7 +85,7 @@ function criar_caixas(numeroforma){
     //console.log(    'pii' ,numerocaixa[numeroforma[posiCaixa]]  );
 }
 
-function criar_linhas(posiForma,posiCaixa){
+function criar_firstLinha(posiForma,posiCaixa){
     
     if(posiCaixa == null){
         posiCaixa = 0
@@ -110,13 +100,12 @@ function criar_linhas(posiForma,posiCaixa){
     //console.log(('caixa'+posiForma) + posiCaixa);
     
     let but = document.createElement('button')
-        but.setAttribute('onclick','criar_teste('+posiForma+','+posiCaixa+')')
+        but.setAttribute('onclick','criar_linhas('+posiForma+','+posiCaixa+')')
         but.className = 'add_ex'
         but.textContent = '+'
     
 
     input_name.placeholder = "colocar exercicio"
-
     input_name.className   = "input exercicio"
     input_kg.className     = "input"
     input_rep.className    = "input"
@@ -130,7 +119,8 @@ function criar_linhas(posiForma,posiCaixa){
     input_rep.after(but)
     
 }
-function criar_teste(posiForma,posiCaixa){
+
+function criar_linhas(posiForma,posiCaixa){
     
     if(posiCaixa == null){
         posiCaixa = 0
@@ -161,24 +151,59 @@ function criar_teste(posiForma,posiCaixa){
 }
 
 function ativado(numeroforma){
-    
     qual_forma = Array(numero_forma).fill(false)
     qual_forma[numeroforma] = true
     
     let formas = document.querySelectorAll('.forma')
-
     for(var k = 0; k < formas.length; k++){
         let forma = formas[k]
         if (qual_forma[k] == false){
             forma.className = 'forma'
             forma.style.display = 'none'
-
         }
         else{
             forma.className = 'forma forma_ativo'
-            forma.style.display = ''
+            forma.style.display = '' 
         }
-
     }
+
+    let inputnumeros_formas = document.querySelectorAll('.btn_sessao')
+    inputnumeros_formas.forEach(function(clicou){
+        clicou.classList.remove('clicked')
+    })
+    inputnumeros_formas[numeroforma].classList.add('clicked');
+
+    
+
+    // let inputnumeros_formas = document.querySelectorAll('.btn_sessao')
+
+    
+    // inputnumeros_formas[numeroforma].checked = true
+    // if(inputnumeros_formas[numeroforma].checked){
+    //     inputnumeros_formas.forEach( function(as){
+    //         as.checked = false
+    //     })
+    //     inputnumeros_formas[numeroforma].checked = true
+    // }
+    
+   
+
+    
+    
    
 }  
+
+
+
+// class inputs{
+//     constructor(name,kg){
+//         this.name = prompt()
+       
+//     }
+// }
+// var nome = []
+// for(var i = 0; i < 2; i++){
+    
+//     nome[i] = new inputs()
+//     console.log(nome[i]) 
+// }   

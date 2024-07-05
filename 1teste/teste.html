@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Ativo sem JavaScript</title>
+    <style>
+      
+        .apa {
+            width: 500px;
+        }
+        .sla{
+            
+       
+            appearance: none;
+            width: 20px; /* Define o tamanho do checkbox */
+            height: 20px;
+            border: 2px solid #333; /* Adiciona uma borda */
+            border-radius: 50%; /* Deixa o checkbox redondo */
+            cursor: pointer;
+              background-color: #28A745;
+        }
+        .sla:checked{
+            background-color: red; 
+        }
+
+        input[type="checkbox"].checkbox-custom {
+            -webkit-appearance: none; /* Remove a aparência padrão do browser */
+            -moz-appearance: none;
+            appearance: none;
+            width: 20px; /* Define o tamanho do checkbox */
+            height: 20px;
+            border: 2px solid #333; /* Adiciona uma borda */
+            border-radius: 50%; /* Deixa o checkbox redondo */
+            cursor: pointer;
+            vertical-align: middle; /* Alinha verticalmente */
+            margin-right: 10px; /* Espaçamento à direita */
+          }
+          
+          /* Estiliza o checkbox quando marcado */
+            input.checkbox-custom:checked {
+            background-color: #ff6347; /* Cor de fundo quando marcado (vermelho) */
+            border-color: #ff6347; /* Cor da borda quando marcado */
+          }
+        
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="sla">aqui
+    <button type="button" class="btn">aaaaaaaaaaaaaaa</button>
+    <div class="apa">
+        a
+    </div>
+    <input type="checkbox" class="checkbox-custom">
+</body>
+</html>

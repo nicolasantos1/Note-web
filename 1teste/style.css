@@ -1,0 +1,17 @@
+/* body{
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vw;
+    
+}
+#btn{
+    height: 50px;
+    border-width: 5px;
+    background-color: gray;
+}
+#btn:active{
+    color: white;
+
+} */
