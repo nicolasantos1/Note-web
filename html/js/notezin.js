@@ -26,7 +26,7 @@ removeRow.forEach(function removeRow(element){
 
 let btnsApagarFichas = document.querySelectorAll('.apagarFicha')
 btnsApagarFichas.forEach( function(element){
-    element.addEventListener('click',function(){    
+    element.addEventListener('click',() =>{    
         element.parentElement.remove()   
     }) 
 })
@@ -85,8 +85,28 @@ function objFicha(){
 
     for(var i = 0; i < 4; i++){
         let inputs = document.createElement('input')
-            inputs.className = 'inputs'
-        placeInputs.appendChild(inputs)
+        switch (i){  
+            case 0:
+                inputs.className = 'inputs exercicio'
+                inputs.placeholder = 'exercício'
+                placeInputs.appendChild(inputs)
+                break
+            case 1:
+                inputs.className = 'inputs KG'
+                inputs.placeholder = 'KG'
+                placeInputs.appendChild(inputs)
+                break   
+            case 2:
+                inputs.placeholder = 'SERIE'
+                inputs.className = 'inputs SERIE'
+                placeInputs.appendChild(inputs)
+                break
+            case 3:
+                inputs.placeholder = 'REP'
+                inputs.className = 'inputs REP'
+                placeInputs.appendChild(inputs)
+                break
+        }
     }
 
     let btnCriar = document.createElement('button')
@@ -127,9 +147,10 @@ function objSecs(){
         h1.textContent = 'treino FullBody'
     
     let btnsHeadSecs  = document.createElement('div')
+        btnsHeadSecs.className = 'btnsTreinoHead'
 
     let btnEditarSec = document.createElement('button')
-        btnEditarSec.textContent = 'editar'
+        btnEditarSec.textContent = 'Editar'
         btnEditarSec.className = ''
 
     let btnApagarSec = document.createElement('button')
