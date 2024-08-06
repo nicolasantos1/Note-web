@@ -1,0 +1,70 @@
+.forma{
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-around;
+    overflow-x: auto;
+    margin: 0 3vw;
+}
+.forma::-webkit-scrollbar{
+    width: auto;
+    margin: 0 3vw;
+}
+
+.forma::-webkit-scrollbar-thumb {
+    background-color: #18acbf; /* cor do botão de rolagem */
+    border-radius: 5px; /* borda do botão de rolagem */
+    margin: 0 3vw;
+}
+
+.forma_ativo{
+    border-bottom: 2px solid rgb(40, 38, 53);
+    background-color: rgb(18, 18, 73);
+    border-radius: 20px;
+    padding: 40px;
+
+}
+
+.caixa{
+    border-radius: 10px;
+    padding: 1vw;
+   
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-auto-rows: 25px;
+    gap: 1em 0;
+    background-color: rgb(34, 37, 48);
+    border: 2px solid  rgb(26, 29, 39);;
+    margin-right: 2vw;
+    width: 270px;
+    
+}
+.input {
+    border: 2px solid rgb(64, 59, 87);
+    border-radius: 4px;
+    width: 100%;
+    min-width: 50px;
+    box-sizing: border-box;
+    
+}
+.exercicio{
+    color: white;
+    width: 100px;
+    padding-right: 1vw;
+    border: 0;
+    background-color: transparent;
+}
+/*.exercicio_editando{
+
+}*/
+.input:focus {
+    outline: 2.5px solid rgb(100, 100, 100);
+
+}
+.exercicio:focus{
+    outline: none;
+}
+.addCaixa{
+    align-self: center;
+    height: 80px;
+}
+

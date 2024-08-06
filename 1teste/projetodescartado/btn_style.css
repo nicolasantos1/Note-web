@@ -1,0 +1,64 @@
+button{
+    background-color: rgb(34, 37, 48);
+    color: white;
+    
+   
+}
+
+.btn_sessao.clicked {
+    border: 2px inset black;
+    /*animation: buttonAnimation 1s infinite;*/
+}
+
+#addForma {
+     
+}
+.add_ex{
+    grid-column: span 2; /* Ocupa todas as colunas */
+    justify-self: center; /* Centraliza horizontalmente */
+    height: 30px;
+    width: 30%;
+    
+}
+
+#sessoes_treino{
+    margin-top: 30px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+#sessoes_treino > button{
+    margin: 0 0.2vw;
+}
+
+/*
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);
+        background-color: #4CAF50;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #45a049;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #4CAF50;
+    }
+}*/
+
+/* .btn_sessao{
+    appearance: none;
+    width: 20px; 
+    height: 20px;
+    border: 2px solid #333; 
+    cursor: pointer;
+    background-color: #00ff3c;
+    
+}
+.btn_sessao:checked {
+    background-color: blue;
+}
+.clicked {
+    animation: buttonAnimation 1s infinite;
+} */
