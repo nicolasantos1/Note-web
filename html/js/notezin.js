@@ -1,14 +1,47 @@
 let linhas = []; // Armazena referências das instâncias da classe Linha
 let ficha = [[],[],[],[],[]]
 
+
+
+
+
+
 let btnsCriarLinhas = document.querySelectorAll('.btnCriarLinha')
 btnsCriarLinhas.forEach( function (element) {
-    element.addEventListener('click', function(){
-        // let Linha = document.createElement('input')
+    element.addEventListener('click', function createRow(){
+        // for(var i = 0; i < 4; i++){
+        //     let input = document.createElement('input')
+        //     input.className = 'inputs'
+        //    element.parentElement.parentElement.querySelector('.placeInputs').appendChild(input)
+        // }
+        
         for(var i = 0; i < 4; i++){
-            let input = document.createElement('input')
-            input.className = 'inputs'
-            element.parentElement.parentElement.querySelector('.placeInputs').appendChild(input)
+            let inputs = document.createElement('input')
+            switch (i){  
+                case 0:
+                    inputs.className = 'inputs exercicio'
+                    inputs.placeholder = 'exercício'
+                    element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+                    break
+                case 1:
+                    inputs.className = 'inputs KG'
+                    inputs.placeholder = 'KG'
+                    element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+
+                    break   
+                case 2:
+                    inputs.placeholder = 'SERIE'
+                    inputs.className = 'inputs SERIE'
+                    element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+
+                    break
+                case 3:
+                    inputs.placeholder = 'REP'
+                    inputs.className = 'inputs REP'
+                    element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+
+                    break
+            }
         }
     })
 })
@@ -18,7 +51,9 @@ let removeRow = document.querySelectorAll('.removeRow')
 removeRow.forEach(function removeRow(element){
     element.addEventListener('click', function(){
         for(var i = 0; i < 4; i++){
-            element.parentElement.parentElement.querySelector('.inputs').remove()
+            let inputs = element.parentElement.parentElement.querySelectorAll('.inputs');
+            inputs[inputs.length - 1].remove();
+            
         }    
     })
 })
@@ -40,14 +75,8 @@ btnsCreateFicha.forEach(function(element){
     })
 })
 
-let createTreino = document.getElementById('btnCreateTreino')
-    createTreino.addEventListener('click',() =>{
-        if(objSecs() != null){
-            createTreino.parentElement.before(objSecs())
-            return
-        }
-        alert('limite maximo 5')
-    })
+let btncreateTreino = document.getElementById('btnCreateTreino')
+    btncreateTreino.addEventListener('click',() => createTreino())
 
 let apagarTreino = document.querySelectorAll('.apagarTreino')
     apagarTreino.forEach(function(element){
@@ -56,25 +85,82 @@ let apagarTreino = document.querySelectorAll('.apagarTreino')
         )
     })
 
-
-
-function save(){
-   
-    let valor = ficha[0][0].value
-    console.log(valor);
+function createTreino(){   
+    if(objSecs() != null){
+        document.getElementById('montarTreino').append(objSecs())
+        return
+    }
+    alert('limite maximo 5')  
 }
 
+function ShowRotine(element) {
+    
+    
+    
+    if (element.querySelector('.placePlanilha').style.display == 'flex') {
+        element.querySelector('.placePlanilha').style.display = 'none'
+    }
+    else{
+
+        document.querySelectorAll('.placePlanilha').forEach(element => {
+        element.style.display = 'none'
+        });
+        element.querySelector('.placePlanilha').style.display = 'flex'
+    }
+    
+    
+    
+   
+    
+    
+    
+    console.log('leu');
+    
+}
+
+function createRow(element){
+    for(var i = 0; i < 4; i++){
+        let inputs = document.createElement('input')
+        switch (i){  
+            case 0:
+                inputs.className = 'inputs exercicio'
+                inputs.placeholder = 'exercício'
+                element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+
+                break
+            case 1:
+                inputs.className = 'inputs KG'
+                inputs.placeholder = 'KG'
+                element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+
+
+                break   
+            case 2:
+                inputs.placeholder = 'SERIE'
+                inputs.className = 'inputs SERIE'
+                element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+
+
+                break
+            case 3:
+                inputs.placeholder = 'REP'
+                inputs.className = 'inputs REP'
+                element.parentElement.parentElement.querySelector('.placeInputs').appendChild(inputs)
+                break
+        }
+    }
+}
 function objFicha(){
     let obj = document.createElement('section')
-        obj.className = 'lugarFicha'
+    obj.className = 'lugarFicha'
 
     let button = document.createElement('button')
-        button.className = 'apagarFicha'
-        button.textContent = 'apague'
-        button.addEventListener('click',() => button.parentElement.remove()) 
+    button.className = 'apagarFicha'
+    button.textContent = 'apague'
+       
 
     let placeInputs = document.createElement('div')
-        placeInputs.className = 'placeInputs'
+    placeInputs.className = 'placeInputs'
 
     let div = document.createElement('div')
         
@@ -83,54 +169,29 @@ function objFicha(){
     obj.appendChild(placeInputs)
     obj.appendChild(div)
 
-    for(var i = 0; i < 4; i++){
-        let inputs = document.createElement('input')
-        switch (i){  
-            case 0:
-                inputs.className = 'inputs exercicio'
-                inputs.placeholder = 'exercício'
-                placeInputs.appendChild(inputs)
-                break
-            case 1:
-                inputs.className = 'inputs KG'
-                inputs.placeholder = 'KG'
-                placeInputs.appendChild(inputs)
-                break   
-            case 2:
-                inputs.placeholder = 'SERIE'
-                inputs.className = 'inputs SERIE'
-                placeInputs.appendChild(inputs)
-                break
-            case 3:
-                inputs.placeholder = 'REP'
-                inputs.className = 'inputs REP'
-                placeInputs.appendChild(inputs)
-                break
-        }
-    }
-
     let btnCriar = document.createElement('button')
-        btnCriar.textContent = 'Criar'
-        btnCriar.addEventListener('click', () =>{
-            for(var i = 0; i < 4; i++){
-                let input = document.createElement('input')
-                    input.className = 'inputs'
-                btnCriar.parentElement.parentElement.querySelector('.placeInputs').appendChild(input)
-            }
-        })
+    btnCriar.textContent = 'Criar'
     
     let btnApagar = document.createElement('button')    
-        btnApagar.textContent = 'X'
-        btnApagar.addEventListener('click', () => {
-            for(var i = 0; i < 4; i++){
-                btnApagar.parentElement.parentElement.querySelector('.inputs').remove()
-            }  
-        })
+    btnApagar.textContent = 'X'
+        
 
     div.appendChild(btnCriar)
     div.appendChild(btnApagar)
-        
+
+    button.addEventListener('click',() => button.parentElement.remove()) 
+    btnApagar.addEventListener('click', () => {
+        for(var i = 0; i < 4; i++){
+            let inputs = btnApagar.parentElement.parentElement.querySelectorAll('.inputs');
+            inputs[inputs.length - 1].remove();
+            
+        }  
+    })
+    btnCriar.addEventListener('click', () => createRow(btnCriar));
+    createRow(btnCriar)
+
     return obj
+
 }
 function objSecs(){
     if(document.querySelectorAll('.treino').length == 5){
@@ -144,7 +205,8 @@ function objSecs(){
         treinoHead.className = 'treinoHead'
 
     let h1 = document.createElement('h1')
-        h1.textContent = 'treino FullBody'
+        h1.textContent = 'treinoFullBody'
+        h1.addEventListener('click', () => ShowRotine(treino))
     
     let btnsHeadSecs  = document.createElement('div')
         btnsHeadSecs.className = 'btnsTreinoHead'
@@ -157,12 +219,13 @@ function objSecs(){
         btnApagarSec.textContent = 'X'
         btnApagarSec.className = 'apagarTreino'
         btnApagarSec.addEventListener('click',() => 
-            btnApagarSec.parentElement.parentElement.parentElement.remove()
+            treino.remove()
         )
     
     
     let placePlanilha = document.createElement('div')
         placePlanilha.className = 'placePlanilha'
+        placePlanilha.style.display = 'none'
 
     let divbtns = document.createElement('div')
     

@@ -1,0 +1,165 @@
+body,html{
+    margin: 0;
+    height: 100%;
+    
+}
+body{
+    font-family: "TASA Explorer", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #020504;
+    min-height: 100vh;
+    color: white;
+}
+a{
+    font-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: #081c15;
+    height: 10vh;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+}
+
+
+
+
+#semana ul{
+    padding: 0;
+    display: flex;
+    justify-content:space-around;
+}
+.nottoday{
+    text-decoration: none;
+    list-style: none;
+    background-color: green;
+}
+.today{
+    background-color: red;
+}
+
+#main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-torso{
+    flex: 1;
+    height: min-content ;
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    
+}
+
+#main-left{
+    align-items: stretch;
+    background-color: #081c15;
+    
+}
+.main-left-list{
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    font-size: 40px;
+    background-color: #2d6a4f;
+    border-radius: 5px;
+}
+
+#montarTreino{
+    margin: 20px auto;
+    text-align: center;
+    background-color: #081c15;
+    border-radius: 30px;
+    padding: 1px;
+    max-width: 400px;
+    height: max-content;
+}
+.treino{
+    
+    background-color: #2d6a4f;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.placePlanilha{
+    margin: 0 1vw;
+    display: flex;
+    justify-content: space-around;
+    white-space: nowrap;
+    background-color: #74c69d;
+    border-radius: 20px;
+    padding: 10px;
+    overflow-x: auto;
+    
+}
+
+.treinoHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+ .treinoHead div{
+    margin: 10px 2vw;
+    white-space: nowrap;
+}
+
+.treinoHead h1{
+    align-self: center;
+    justify-self: center;
+    margin: 5px 10px;
+}
+
+.treinoHead button{
+   
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+
+}
+
+.lugarFicha{
+    margin: 1vw;
+    background-color: #95d5b2;
+    border-radius: 20px;
+    padding: 3vw;
+}
+.placeInputs{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-auto-rows: 25px;
+    gap: 1em 0;
+    max-width: 200px;
+    min-width: 200px;
+  
+}
+.inputs{
+    border: 1px solid rgb(64, 59, 87);
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100px;
+    text-align: center;
+}
+
+#createTreino{
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 0 2vw;
+}
+#createTreino button{
+    border-radius: 15px;
+    width: 100%;
+    height: 50px;
+}
