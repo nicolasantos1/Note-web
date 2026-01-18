@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="js/notezin(2.0).js" defer></script>
+    <link rel="stylesheet" href="css/notezin2.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        Training
+    </header>
+    <div id="conteiner">
+        <aside id="sidebar">
+            <ul>
+                <li>Rotine</li>
+                <li>Workouts</li>
+            </ul>
+        </aside>
+        <main id="central">
+            <div id="rotine-place" class="rotine-place">
+                <h1>Rotines</h1>
+                <section id="mold" class="rotine-content">
+                    <h1 onclick="entryRotine(this)" class="training-name">
+                        upper I
+                    </h1>
+                    <p class="workout-name">
+                       
+                    </p>
+                </section>
+            </div>
+            <div id="one-rotine"  class="rotine-place" style="display: none;">
+                <button id="back-rotines">Voltar</button>
+                <div class="rotine">
+                    <h1 id="rotine-name"></h1>
+                    <div class="exercise">
+                        <ul>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <button>new exercise</button>
+                    <button>Save</button>
+                </div>
+            </div>
+            <div id="perfil-place" style="display: none;">
+    
+            </div>
+        </main>
+        <div>
+            <button onclick="newRotine()">New Rotine</button>
+            <button>Ner Folder</button>
+        </div>
+    </div>
+</body>
+</html>

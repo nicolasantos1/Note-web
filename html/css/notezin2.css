@@ -1,0 +1,40 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: "TASA Explorer", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+header{
+  background-color: green;
+  text-align: center;
+  align-content: center;
+  height: 60px;
+}
+
+#conteiner{
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+}
+
+/*  Rotines   */
+.rotine-place{
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.rotine-content{
+  background-color: greenyellow;
+  width: 400px;
+  margin: auto;
+  border-radius: 10px;
+  text-align: start;
+  padding: 5px;
+}
+
