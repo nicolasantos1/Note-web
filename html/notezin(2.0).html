@@ -28,9 +28,9 @@
         <main id="central">
             <div id="rotine-place" class="rotine-place">
                 <h1>Rotines</h1>
-                <section id="mold" class="rotine-content">
+                <section id="mold" class="rotine-content" style="display: none;">
                     <h1 onclick="entryRotine(this)" class="training-name">
-                        upper I
+                        
                     </h1>
                     <p class="workout-name">
                        
@@ -39,19 +39,45 @@
             </div>
             <div id="one-rotine"  class="rotine-place" style="display: none;">
                 <button id="back-rotines">Voltar</button>
-                <div class="rotine">
-                    <h1 id="rotine-name"></h1>
-                    <div class="exercise">
-                        <ul>
-                            <li></li>
-                        </ul>
+                <div class="rotine" id="molde-rotine">
+                    
+                    <section id="exercises">
+                        <h1 class="rotineName">esboco</h1>
+                        <div class="exercise-info" id="mold-exercise"  >
+                            <select>
+                                <option value="" class="name-exercises">selecionar</option>
+                               
+                            </select>
+                            <div class="volume">
+                                <input type="text" placeholder="kg">
+                                <input type="text" placeholder="reps">
+                            </div>
+                            <button>Add Series</button>
+                        </div>
+
+                    </section>
+                    <div>
+                        <button id="new-exercise">new exercise</button>
+                        <button>Save</button>
                     </div>
-                    <button>new exercise</button>
-                    <button>Save</button>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <div id="perfil-place" style="display: none;">
-    
             </div>
         </main>
         <div>
