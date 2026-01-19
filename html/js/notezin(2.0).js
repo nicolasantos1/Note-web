@@ -20,32 +20,39 @@ const exercises = [
 ];
 
 
+let obj = []
+let newRotine = document.getElementById('new-rotine')
+    newRotine.addEventListener('click', () => {
+        if(obj.length >= 5){
+            alert('Maximo de elementos criados')
+            return
+        }
+        let nome = prompt("Digite o nome da rotina:");
+        if(nome == '' || nome == null){
+            alert('elemento vazio') 
+            return
+        }
+        obj.push(nome)
 
-function newRotine(){
+        const place = document.getElementById('rotine-place')
+
+        const rotines =  document.createElement('div')
+            rotines.className = 'rotine'
+            rotines.id = 'rotine-'+nome
+        
+        const rotineName = document.createElement('h1')
+            rotineName.addEventListener('click', entryRotine(rotineName))
+
+        place.appendChild(rotines)
+        rotines.appendChild(rotineName)
+        rotineName.textContent = nome
+        console.log(obj);
+        
+    } )
+
+function entryRotine(element){
+    console.log(element);
     
-    if(document.querySelectorAll('.rotine-content').length == 5){
-        alert('Maximo 5')
-        return
-    }
-    let original = document.getElementById('mold')
-    let copy = original.cloneNode(true)
-        copy.removeAttribute('id')  
-        copy.style.display = 'block'
-   
-    let place = document.getElementById('rotine-place')
-        place.appendChild(copy)
-
-    let nome = prompt("Digite o nome da rotina:");
-    if (nome == null || nome == '') {
-        copy.remove(true)
-    }
-    
-
-    copy.querySelector('.training-name').textContent = nome
-
-    
-
-
 }
 
 

@@ -24,12 +24,13 @@ header{
 }
 
 /*  Rotines   */
-.rotine-place{
+.central-place{
   align-content: center;
   align-items: center;
   text-align: center;
 }
-.rotine-content{
+
+.rotine{
   background-color: greenyellow;
   width: 400px;
   margin: auto;
@@ -38,31 +39,3 @@ header{
   padding: 5px;
 }
 
-#exercise{
-  margin: 10px;
-  align-items: center;
-  justify-items: center;
-
-  display: flex;
-  flex-direction: column;
-
-}
-#exercise select{
-  margin: 5px;
- 
-}
-
-.exercise-info{
-  display: grid;
-  grid-template-columns: repeat(2, 10fr);
-}
-.exercise-info button{
-  grid-column: 1 / -1;
-}
-.volume{
-  display: flex;
-  
-}
-.volume p{
-  margin: 4px;
-}
