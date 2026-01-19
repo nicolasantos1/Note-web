@@ -37,11 +37,27 @@ let newRotine = document.getElementById('new-rotine')
         const place = document.getElementById('rotine-place')
 
         const rotines =  document.createElement('div')
-            rotines.className = 'rotine'
+            rotines.className = 'rotines'
             rotines.id = 'rotine-'+nome
         
         const rotineName = document.createElement('h1')
-            rotineName.addEventListener('click', entryRotine(rotineName))
+            rotineName.addEventListener('click',()=> entryRotine(nome))
+
+
+        const entriedRotine = document.createElement('div')
+            entriedRotine.id = 'entry-'+nome
+            entriedRotine.className = 'entry'
+            entriedRotine.style.display = 'none'
+
+        const input = document.createElement('input')
+            
+
+        const placeOneRotine = document.getElementById('one-rotine')
+
+
+        placeOneRotine.appendChild(entriedRotine)
+        entriedRotine.appendChild(input)
+
 
         place.appendChild(rotines)
         rotines.appendChild(rotineName)
@@ -50,12 +66,29 @@ let newRotine = document.getElementById('new-rotine')
         
     } )
 
-function entryRotine(element){
-    console.log(element);
+function entryRotine(id){
+    let oneRotine = document.getElementById('one-rotine')
+        oneRotine.style.display = 'block'
+    let rotinePlace = document.getElementById('rotine-place')
+        rotinePlace.style.display = 'none'
+
+    let AllEntry = document.querySelectorAll('.entry')
+    AllEntry.forEach( function(ele){
+        ele.style.display = 'none'
+
+    })
+    const Entry = document.getElementById('entry-'+id)
+        Entry.style.display = 'block'
     
 }
 
-
+let backRotines = document.getElementById('back-rotines')
+    backRotines.addEventListener('click',()=>{
+        let oneRotine = document.getElementById('one-rotine')
+            oneRotine.style.display = 'none'
+        let rotinePlace = document.getElementById('rotine-place')
+            rotinePlace.style.display = 'block'
+    })
 
 
 
