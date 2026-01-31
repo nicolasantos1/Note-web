@@ -1,0 +1,75 @@
+body,html{
+    margin: 0;
+    height: 100%;
+    
+}
+body{
+    font-family: "TASA Explorer", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #020504;
+    min-height: 100vh;
+    color: white;
+}
+a{
+    font-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-around;
+    background-color: #081c15;
+    height: 10vh;
+    align-items: center;
+    font-size: 2em;
+    color: white;
+}
+#main{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#main-torso{
+    flex: 1;
+    height: min-content ;
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;  
+}
+#main-left{
+    align-items: stretch;
+    background-color: #081c15; 
+}
+.main-left-list{
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    font-size: 40px;
+    background-color: #2d6a4f;
+    border-radius: 5px;
+}
+
+/*-------------------------PlaceRotine*/
+.place-rotine{
+    margin: 0 auto;
+}
+.rotines{
+    background-color: #2d6a4f;
+    margin: 20px 0;
+}
+.volume-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  
+}
+
+.col {
+    display: grid;
+    grid-template-columns: repeat(1, 160px);
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}

@@ -1,7 +1,5 @@
 let hoje = new Date()
 
-
-
 window.addEventListener('load', function() {
     console.log(hoje.getDay());
     let a = document.querySelectorAll('.nottoday')
