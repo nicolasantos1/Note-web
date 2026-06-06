@@ -36,23 +36,47 @@ a{
     flex: 1;
     height: min-content ;
     display: grid;
-    grid-template-columns: 1fr 5fr 2fr;  
+    grid-template-columns: 1fr 5fr;  
 }
 #main-left{
+    width: 300px;
+    height: 100vh;
     align-items: stretch;
     background-color: #081c15; 
 }
 .main-left-list{
-    margin: 0 10px 10px 0;
+    margin: 20px;
     padding: 10px;
     font-size: 40px;
     background-color: #2d6a4f;
     border-radius: 5px;
 }
 
+
+
+
+
+
+
+#main-right{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 4fr 2fr;  
+}
+
+
+
+
 /*-------------------------PlaceRotine*/
+
+
+
+
+
+
+
 .place-rotine{
-    margin: 0 auto;
+    margin: 30px auto;
 }
 .rotines{
     background-color: #2d6a4f;

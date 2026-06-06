@@ -12,13 +12,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=TASA+Explorer:wght@400..800&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Bodyexe</title>
 </head>
 <body>
     <div id="all">
-        <header id="nav">
-            <a href="BODYexe.html">Treino</a>
-        </header>   
         <div id="main-torso">
             <aside id="main-left">
                 <div class="main-left-list">
@@ -31,28 +28,30 @@
                     <p>Perfil</p>
                 </div>
             </aside>
-            <div class="place-rotine">
-                <div class="rotines">
-                    <h1 class="rotine-name">fullbody</h1>
-                    <div class="volume-container">
-                        <div class="col sets-conteiner">
-                            <h3 class="sets">Sets</h3> 
+            <div id="main-right"> 
+                <div class="place-rotine">
+                    <div class="rotines">
+                        <h1 class="rotine-name">fullbody</h1>
+                        <div class="volume-container">
+                            <div class="col sets-conteiner">
+                                <h3 class="sets">Sets</h3> 
+                            </div>
+                            <div class="col kg-conteiner">
+                                <h3 class="kg">kg</h3>
+                                <input class="input kg" type="text">
+                            </div>
+                            <div class="col reps-conteiner">
+                                <h3 class="reps">reps</h3>
+                                <input class="input reps" type="text">
+                            </div>
                         </div>
-                        <div class="col kg-conteiner">
-                            <h3 class="kg">kg</h3>
-                            <input class="input kg" type="text">
-                        </div>
-                        <div class="col reps-conteiner">
-                            <h3 class="reps">reps</h3>
-                            <input class="input reps" type="text">
-                        </div>
+                        <button class="btn-sets">+</button>
                     </div>
-                    <button class="btn-sets">+</button>
                 </div>
+                <div id="createTreino">
+                       <button id="btnCreateTreino">New Rotine</button>
+                </div> 
             </div>
-            <div id="createTreino">
-                   <button id="btnCreateTreino">New Rotine</button>
-            </div> 
         </div>
     </div>
 </div>
